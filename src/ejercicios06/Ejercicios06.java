@@ -99,65 +99,61 @@ public class Ejercicios06 {
         }
 
     }
-    
-    public static void ejercicio03(){
+
+    public static void ejercicio03() {
         int swap;
-        int[] numeros = { 16, 3, 2, 13, 5, 10, 11, 8, 9, 6, 7, 12, 4, 15, 14, 1};
+        int[] numeros = {16, 3, 2, 13, 5, 10, 11, 8, 9, 6, 7, 12, 4, 15, 14, 1};
         for (int i = 0; i < numeros.length - 1; i++) {
-            if(numeros[i] > numeros[i + 1]){
+            if (numeros[i] > numeros[i + 1]) {
                 swap = numeros[i];
-                numeros[i] = numeros[i +1];
+                numeros[i] = numeros[i + 1];
                 numeros[i + 1] = swap;
-                i=-1;
-            }
-            
-        }
-        printIntArray(numeros);
-        
-        
-    }
-    
-    public static void ejercicio03v2(){
-        int swap;
-        int[] numeros = { 16, 3, 2, 13, 5, 10, 11, 8, 9, 6, 7, 12, 4, 15, 14, 1};
-        for (int i = 0; i < numeros.length - 1; i++) {
-            for (int j = i + 1; j < numeros.length; j++) {
-                if(numeros[i] > numeros[j]){
-                swap = numeros[i];
-                numeros[i] = numeros[j];
-                numeros[j] = swap;
-                }
-                
+                i = -1;
             }
 
-            
         }
         printIntArray(numeros);
-        
-        
+
     }
-    
-    public static void ejercicio04(){
-        String[][] nombreCompleto = new String[13][3]; 
+
+    public static void ejercicio03v2() {
+        int swap;
+        int[] numeros = {16, 3, 2, 13, 5, 10, 11, 8, 9, 6, 7, 12, 4, 15, 14, 1};
+        for (int i = 0; i < numeros.length - 1; i++) {
+            for (int j = i + 1; j < numeros.length; j++) {
+                if (numeros[i] > numeros[j]) {
+                    swap = numeros[i];
+                    numeros[i] = numeros[j];
+                    numeros[j] = swap;
+                }
+
+            }
+
+        }
+        printIntArray(numeros);
+
+    }
+
+    public static void ejercicio04() {
+        String[][] nombreCompleto = new String[13][3];
         String[] nombre = {"Carlos", "Miguel", "Iván", "Benjamín", "Francisco", "Erik", "Alexis Jose", "Marcos", "Cristopher", "Mauricio", "Jose Simon", "Nuria Maria", "Silvio", "Gonçalo Rafael"};
         String[] apellido1 = {"Alvarez", "Candeira", "Casas", "Dominguez", "Fernandez", "Ferreira", "Giraldez", "Gonzalez", "Juncal", "Montes", "Sanchez", "da Silva", "Suarez", "Novas", "rodrigues"};
-        String[] apellido2 = {"Sanchez", "Carrera", "Cerqueira", "Fernandez", "Araujo", "Oset", "Groba", "Pereira", "Abeledo", "Iglesias", "Gonzalez", "Vilas", "martínez", "bento"};    
-        for(int i = 0; i < nombreCompleto.length; i++){ 
-            nombreCompleto[i][0] = nombre[random(nombre.length)];
-            nombreCompleto[i][1] = apellido1[random(apellido1.length)];
-            nombreCompleto[i][2] = apellido2[random(apellido2.length)];
+        String[] apellido2 = {"Sanchez", "Carrera", "Cerqueira", "Fernandez", "Araujo", "Oset", "Groba", "Pereira", "Abeledo", "Iglesias", "Gonzalez", "Vilas", "martínez", "bento"};
+        for (String[] nombreCompleto1 : nombreCompleto) {
+            nombreCompleto1[0] = nombre[random(nombre.length)];
+            nombreCompleto1[1] = apellido1[random(apellido1.length)];
+            nombreCompleto1[2] = apellido2[random(apellido2.length)];
         }
         printNombres(nombreCompleto);
     }
-    
-    public static void printNombres(String[][] nombres){
-        for(int i = 0; i < nombres.length; i++){
-            System.out.printf("%s %s, %s\n", nombres[i][1], nombres[i][2], nombres[i][0]);
-            
+
+    public static void printNombres(String[][] nombres) {
+        for (String[] nombre : nombres) {
+            System.out.printf("%s %s, %s\n", nombre[1], nombre[2], nombre[0]);
         }
     }
-    
-    public static int random(int max){
+
+    public static int random(int max) {
         Random generador = new Random();
         return generador.nextInt(max);
     }
