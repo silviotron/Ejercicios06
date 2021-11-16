@@ -18,7 +18,7 @@ public class Ejercicios06 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ejercicio04();
+        ejercicio05();
     }
 
     public static void ejercicio01() {
@@ -157,5 +157,54 @@ public class Ejercicios06 {
         Random generador = new Random();
         return generador.nextInt(max);
     }
+    
+    public static void ejercicio05(){
+        int[] numeros = new int[5];
+        int[] estrellas = new int[2];
+        numeros = llenarEuromillones(numeros, 50);
+        estrellas = llenarEuromillones(estrellas, 10);
+        System.out.print("números: ");
+        printIntArray(numeros);
+        System.out.print("\nEstrellas:");
+        printIntArray(estrellas);
+        System.out.println("");
+        
+        
+        
+    }
+    public static int[] llenarEuromillones(int[] array, int max){
+        int random;
+        boolean existe;
+        for (int i = 0; i < array.length; i++) {
+            do{
+                random = random(max);
+                existe = existeEnArray(random, array);               
+            }
+            while(existe);
+            array[i] = random;
+        }
+        int swap;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i] > array[j]) {
+                    swap = array[i];
+                    array[i] = array[j];
+                    array[j] = swap;
+                }
+
+            }
+
+        }        
+        
+        return array;
+    }
+    public static boolean existeEnArray(int n, int[] array){
+        for(int f = 0; f < array.length; f++){
+            if(array[f] == n){
+                return true;
+            }
+        }
+        return false;
+    }    
 
 }
