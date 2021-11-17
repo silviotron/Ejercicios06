@@ -18,7 +18,7 @@ public class Ejercicios06 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ejercicio05();
+        ejercicio06();
     }
 
     public static void ejercicio01() {
@@ -145,6 +145,7 @@ public class Ejercicios06 {
             nombreCompleto1[2] = apellido2[random(apellido2.length)];
         }
         printNombres(nombreCompleto);
+        printRepetidos2(apellido1, apellido2);
     }
 
     public static void printNombres(String[][] nombres) {
@@ -153,12 +154,39 @@ public class Ejercicios06 {
         }
     }
 
+    public static void printRepetidos(String[][] array) {
+        boolean noSeRepite = true;
+        for (String[] array1 : array) {
+            if (array1[1].equals(array1[2])) {
+                System.out.printf("%s %s, %s tiene el apellido repetido\n", array1[1], array1[2], array1[0]);
+                noSeRepite = false;
+            }
+        }
+        if (noSeRepite) {
+            System.out.println("no se repite ningun apellido");
+        }
+
+    }
+    
+    public static void printRepetidos2(String[] array1, String[] array2){
+        for (int i = 0; i < array1.length; i++) {
+            for (int j = 0; j < array2.length; j++) {
+                if(array1[i].equals(array2[j])){
+                    System.out.println(array1[i]);
+                }
+                
+            }
+            
+        }
+        
+    }
+
     public static int random(int max) {
         Random generador = new Random();
         return generador.nextInt(max);
     }
-    
-    public static void ejercicio05(){
+
+    public static void ejercicio05() {
         int[] numeros = new int[5];
         int[] estrellas = new int[2];
         numeros = llenarEuromillones(numeros, 50);
@@ -168,19 +196,17 @@ public class Ejercicios06 {
         System.out.print("\nEstrellas:");
         printIntArray(estrellas);
         System.out.println("");
-        
-        
-        
+
     }
-    public static int[] llenarEuromillones(int[] array, int max){
+
+    public static int[] llenarEuromillones(int[] array, int max) {
         int random;
         boolean existe;
         for (int i = 0; i < array.length; i++) {
-            do{
+            do {
                 random = random(max);
-                existe = existeEnArray(random, array);               
-            }
-            while(existe);
+                existe = existeEnArray(random, array);
+            } while (existe);
             array[i] = random;
         }
         int swap;
@@ -194,17 +220,93 @@ public class Ejercicios06 {
 
             }
 
-        }        
-        
+        }
+
         return array;
     }
-    public static boolean existeEnArray(int n, int[] array){
-        for(int f = 0; f < array.length; f++){
-            if(array[f] == n){
+
+    public static boolean existeEnArray(int n, int[] array) {
+        for (int f = 0; f < array.length; f++) {
+            if (array[f] == n) {
                 return true;
             }
         }
         return false;
-    }    
+    }
+    
+    public static void ejercicio06(){
+    int[][] matriz =
+    
+    {
+
+        {16, 3, 2, 13},
+
+        {5, 10, 11, 8},
+
+        {9, 6, 7, 12},
+
+        {4, 15, 14, 1}
+
+    };
+    System.out.println("PARTE 1:\n");
+    printIntArray2(matriz);
+    System.out.println("PARTE 2:\n");
+    matriz = ordenarIntArray2(matriz);
+    printIntArray2(matriz);    
+        
+    }
+    
+    public static void printIntArray2(int[][] array){
+        String print;
+        for (int i = 0; i < array.length; i++) {
+            System.out.print("|");
+            for (int j = 0; j < array[i].length; j++){
+                switch(array[i][j]){
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 9:
+                        print = " " + array[i][j];
+                        break;
+                    default:
+                        print = "" + array[i][j];
+                        break;
+
+                }     
+                System.out.print("  " + print);
+            }
+            System.out.print("  |\n");
+        }
+        
+    } 
+    public static int[][] ordenarIntArray2(int[][] array){
+        int swap;
+        for (int i = 0; i < array.length; i++) {            
+            for (int j = 0; j < array[i].length; j++) {
+                for (int k = 0 ; k < array.length; k++) {
+                    for (int l = 0; l < array[k].length; l++) {
+                        if(array[i][j] < array[k][l]){
+                            swap = array[i][j];
+                            array[i][j] = array[k][l];
+                            array[k][l]= swap;
+                        }    
+                        
+                    }
+                    
+                }
+    
+                
+            }
+            
+        }
+        
+        return array;
+    }
+    
 
 }
