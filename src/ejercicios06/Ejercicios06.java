@@ -18,8 +18,51 @@ public class Ejercicios06 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ejercicio06();
+        String entradaUsuario;
+        java.util.Scanner teclado = new java.util.Scanner(System.in);
+        do{
+            System.out.println("**************************************************");
+            System.out.println("*  1. Notas: media, mayor, menor                 *");
+            System.out.println("*  2. Print array derecho y reves                *");
+            System.out.println("*  3. Ordenar array                              *");
+            System.out.println("*  4. Nombres random y apellidos repetidos       *");
+            System.out.println("*  5. Euromillones                               *");
+            System.out.println("*  6. Print y ordenar array bidimensional        *");
+            System.out.println("*  0. Salir                                      *");
+            System.out.println("**************************************************");
+            entradaUsuario = teclado.nextLine();
+            switch(entradaUsuario){
+                case "1":
+                    ejercicio01();
+                    break;
+                case "2":
+                    ejercicio02();
+                    break;
+                case "3":
+                    ejercicio03v2();
+                    break;
+                case "4":
+                    ejercicio04();
+                    break;
+                case "5":
+                    ejercicio05();
+                    break;
+                case "6":
+                    ejercicio06();
+                    break;
+                case "0":
+                    break;
+                default:
+                    System.out.println("Opción incorrecta");
+                    break;
+            }
+        }while(!entradaUsuario.equals("0"));  
     }
+    
+    public static int random(int max,int minimo) {        
+        Random generador = new Random();
+        return generador.nextInt(max + minimo) + minimo;
+    }    
 
     public static void ejercicio01() {
         Scanner sc = new Scanner(System.in);
@@ -78,6 +121,7 @@ public class Ejercicios06 {
         return menor;
     }
 
+    
     public static void ejercicio02() {
         int[] numeros = {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010};
         printIntArray(numeros);
@@ -97,9 +141,11 @@ public class Ejercicios06 {
             System.out.print("[" + array[i] + "]");
 
         }
+        System.out.println("");
 
     }
 
+    
     public static void ejercicio03() {
         int swap;
         int[] numeros = {16, 3, 2, 13, 5, 10, 11, 8, 9, 6, 7, 12, 4, 15, 14, 1};
@@ -134,17 +180,19 @@ public class Ejercicios06 {
 
     }
 
+    
     public static void ejercicio04() {
         String[][] nombreCompleto = new String[13][3];
         String[] nombre = {"Carlos", "Miguel", "Iván", "Benjamín", "Francisco", "Erik", "Alexis Jose", "Marcos", "Cristopher", "Mauricio", "Jose Simon", "Nuria Maria", "Silvio", "Gonçalo Rafael"};
         String[] apellido1 = {"Alvarez", "Candeira", "Casas", "Dominguez", "Fernandez", "Ferreira", "Giraldez", "Gonzalez", "Juncal", "Montes", "Sanchez", "da Silva", "Suarez", "Novas", "rodrigues"};
         String[] apellido2 = {"Sanchez", "Carrera", "Cerqueira", "Fernandez", "Araujo", "Oset", "Groba", "Pereira", "Abeledo", "Iglesias", "Gonzalez", "Vilas", "martínez", "bento"};
         for (String[] nombreCompleto1 : nombreCompleto) {
-            nombreCompleto1[0] = nombre[random(nombre.length)];
-            nombreCompleto1[1] = apellido1[random(apellido1.length)];
-            nombreCompleto1[2] = apellido2[random(apellido2.length)];
+            nombreCompleto1[0] = nombre[random(nombre.length, 0)];
+            nombreCompleto1[1] = apellido1[random(apellido1.length, 0)];
+            nombreCompleto1[2] = apellido2[random(apellido2.length, 0)];
         }
         printNombres(nombreCompleto);
+        System.out.println("");
         printRepetidos2(apellido1, apellido2);
     }
 
@@ -172,7 +220,7 @@ public class Ejercicios06 {
         for (int i = 0; i < array1.length; i++) {
             for (int j = 0; j < array2.length; j++) {
                 if(array1[i].equals(array2[j])){
-                    System.out.println(array1[i]);
+                    System.out.println(array1[i] + " esta repetido");
                 }
                 
             }
@@ -181,17 +229,13 @@ public class Ejercicios06 {
         
     }
 
-    public static int random(int max) {
-        Random generador = new Random();
-        return generador.nextInt(max);
-    }
-
+    
     public static void ejercicio05() {
         int[] numeros = new int[5];
         int[] estrellas = new int[2];
         numeros = llenarEuromillones(numeros, 50);
         estrellas = llenarEuromillones(estrellas, 10);
-        System.out.print("números: ");
+        System.out.print("números:");
         printIntArray(numeros);
         System.out.print("\nEstrellas:");
         printIntArray(estrellas);
@@ -204,7 +248,7 @@ public class Ejercicios06 {
         boolean existe;
         for (int i = 0; i < array.length; i++) {
             do {
-                random = random(max);
+                random = random(max, 1);
                 existe = existeEnArray(random, array);
             } while (existe);
             array[i] = random;
@@ -233,6 +277,7 @@ public class Ejercicios06 {
         }
         return false;
     }
+    
     
     public static void ejercicio06(){
     int[][] matriz =
@@ -284,6 +329,7 @@ public class Ejercicios06 {
         }
         
     } 
+    
     public static int[][] ordenarIntArray2(int[][] array){
         int swap;
         for (int i = 0; i < array.length; i++) {            
