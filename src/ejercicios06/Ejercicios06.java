@@ -296,8 +296,7 @@ public class Ejercicios06 {
     System.out.println("PARTE 1:\n");
     printIntArray2(matriz);
     System.out.println("PARTE 2:\n");
-    matriz = ordenarIntArray2(matriz);
-    printIntArray2(matriz);    
+    printIntArray2(ordenarIntArray2(matriz));    
         
     }
     
@@ -327,8 +326,37 @@ public class Ejercicios06 {
             }
             System.out.print("  |\n");
         }
+        System.out.println("");
         
     } 
+    public static void printIntArray2v2(int[][] array){
+        String print;
+        for (int[] array1 : array) {
+            System.out.print("|");
+            for (int j = 0; j < array1.length; j++) {
+                switch (array1[j]) {
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 9:
+                        print = " " + array1[j];
+                        break;
+                    default:
+                        print = "" + array1[j];
+                        break;
+                }     
+                System.out.print("  " + print);
+            }
+            System.out.print("  |\n");
+        }
+        System.out.println("");
+        
+    }    
     
     public static int[][] ordenarIntArray2(int[][] array){
         int swap;
@@ -353,6 +381,6 @@ public class Ejercicios06 {
         
         return array;
     }
+ 
     
-
 }
