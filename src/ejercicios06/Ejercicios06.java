@@ -467,7 +467,7 @@ public class Ejercicios06 {
             return false;
         }
         s1 = s1.toLowerCase();
-        s1 = s2.toLowerCase();
+        s2 = s2.toLowerCase();
         StringBuilder sb = new StringBuilder(s1);
         StringBuilder sb2 = new StringBuilder(s2);
         for(int f = 0; f < s1.length(); f++){
@@ -486,7 +486,6 @@ public class Ejercicios06 {
     }
     public static String soloLetras(String s){
         StringBuilder sb = new StringBuilder(s);
-        int caracter;
         for (int i = s.length()-1; i >= 0; i--) {
             if(!Character.isLetter(s.charAt(i))){
                 sb.deleteCharAt(i);
