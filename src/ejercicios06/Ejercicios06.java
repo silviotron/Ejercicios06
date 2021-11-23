@@ -28,6 +28,7 @@ public class Ejercicios06 {
             System.out.println("*  4. Nombres random y apellidos repetidos       *");
             System.out.println("*  5. Euromillones                               *");
             System.out.println("*  6. Print y ordenar array bidimensional        *");
+            System.out.println("*  7. Anagrama bien                              *");
             System.out.println("*  0. Salir                                      *");
             System.out.println("**************************************************");
             entradaUsuario = teclado.nextLine();
@@ -50,6 +51,9 @@ public class Ejercicios06 {
                 case "6":
                     ejercicio06();
                     break;
+                case "7":
+                    ejercicio07();
+                    break;                    
                 case "0":
                     break;
                 default:
@@ -382,10 +386,10 @@ public class Ejercicios06 {
     
     public static int[][] ordenarIntArray2(int[][] array){
         int swap;
-        for (int i = 0; i < array.length; i++) {            
-            for (int j = 0; j < array[i].length; j++) {
-                for (int k = 0; k < array.length; k++) {
-                    for (int l = 0; l < array[k].length; l++) {
+        for(int i = 0; i < array.length; i++) {            
+            for(int j = 0; j < array[i].length; j++) {
+                for(int k = 0; k < array.length; k++) {
+                    for(int l = 0; l < array[k].length; l++) {                        
                         if(array[i][j] < array[k][l]){
                             swap = array[i][j];
                             array[i][j] = array[k][l];
@@ -441,6 +445,57 @@ public class Ejercicios06 {
         
         return array;
     }   
+    
+    public static void ejercicio07(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("introduce un texto: ");
+        String string1 = sc.nextLine();
+        System.out.print("introduce otro texto: ");
+        String string2 = sc.nextLine(); 
+        if(esAnagrama(string1, string2)){
+            System.out.printf("%s es un anagrama de %s\n", string1, string2);
+        }else{
+            System.out.printf("%s no es un anagrama de %s\n", string1, string2);
+        }        
+        
+        
+    }
+    public static boolean esAnagrama(String s1, String s2){
+        s1 = soloLetras(s1);
+        s2 = soloLetras(s2);
+        if(s1.length() != s2.length()){
+            return false;
+        }
+        s1 = s1.toLowerCase();
+        s1 = s2.toLowerCase();
+        StringBuilder sb = new StringBuilder(s1);
+        StringBuilder sb2 = new StringBuilder(s2);
+        for(int f = 0; f < s1.length(); f++){
+            if(s2.contains(Character.toString(s1.charAt(f)))){
+                sb.deleteCharAt(0);
+                sb2.deleteCharAt(sb2.indexOf(Character.toString(s1.charAt(f))));
+                s2 = sb2.toString();
+            }else{
+                return false;
+            }
+        }
+        String resultado = sb.toString();
+        return resultado.equals("");        
+        
+        
+    }
+    public static String soloLetras(String s){
+        StringBuilder sb = new StringBuilder(s);
+        int caracter;
+        for (int i = s.length()-1; i >= 0; i--) {
+            if(!Character.isLetter(s.charAt(i))){
+                sb.deleteCharAt(i);
+            }
+            
+        }        
+        s = sb.toString();
+        return s;
+    }
  
     
 }
