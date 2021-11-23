@@ -53,7 +53,16 @@ public class Ejercicios06 {
                     break;
                 case "7":
                     ejercicio07();
-                    break;                    
+                    break; 
+                case "69":
+                    easterEgg();
+                    break;
+                case "10":
+                    easterEgg1();
+                    break;
+                case "cr7":
+                    easterEgg2();
+                    break;
                 case "0":
                     break;
                 default:
@@ -495,6 +504,83 @@ public class Ejercicios06 {
         s = sb.toString();
         return s;
     }
+    
+    public static void easterEgg(){
+        System.out.println("");
+        System.out.println("  ▔▔▔▔▔╲");
+        System.out.println("▕╮╭┻┻╮╭┻┻╮╭▕╮╲");
+        System.out.println("▕╯┃╭╮┃┃╭╮┃╰▕╯╭▏");
+        System.out.println("▕╭┻┻┻┛┗┻┻┛ ▕ ╰▏");
+        System.out.println("▕╰━━━┓┈┈┈╭╮▕╭╮▏");
+        System.out.println("▕╭╮╰┳┳┳┳╯╰╯▕╰╯▏");
+        System.out.println("▕╰╯┈┗┛┗┛┈╭╮▕╮┈▏");
+        System.out.println("");
+        
+        
+    }
+    public static void easterEgg1(){
+        System.out.println("");
+        System.out.println("⠀⠀⠀⠀⣠⡤⠒⠂⢀⣈⣉⠉⠑⠒⠢⠤⡀⠀⠀⠀");
+        System.out.println("⠀⠀⡰⠉⢁⣰⣶⣾⣿⣿⣿⣿⣷⣶⣼⣶⣼⣆⠀⠀⠀⠀");
+        System.out.println("⠀⢠⣁⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⡀⠀");
+        System.out.println("⠀⣿⣿⣿⣿⠛⠛⠛⠉⠉⠁⠀⠈⠉⠉⠙⠻⣿⣿⣷⣿⡄ ");
+        System.out.println("⠀⣿⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣷⣿⢱ ");
+        System.out.println("⠀⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣟⠂⡇⠀");
+        System.out.println("⠀⣿⣿⠀⢀⣤⣶⣶⣦⠀⠀⢠⣴⣿⣷⣶⡄⠀⠘⢿⣿⣧⡇⠀");
+        System.out.println("⢸⣿⡏⠀⠠⡶⢽⡶⠿⠃⠀⠘⢿⠿⠶⠟⠿⠂⠀⢸⣿⣿⡿⡀");
+        System.out.println("⡜⢿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠟⠋⠀⡇");
+        System.out.println("⢱⠈⠙⠀⠀⠀⠀⣠⢠⣤⣤⣤⣤⣤⡤⡀⠀⠀⠀⠀⠀⣤⠀⢰");
+        System.out.println("⢸⠀⢢⡄⠀⠀⠴⣧⣴⡶⢿⢿⣿⣿⣿⣾⣦⠀⡀⢠⣆⠀⠙⠸");
+        System.out.println("⢠⠀⠈⣷⣀⡀⠨⣿⢿⢋⣉⣉⣉⣙⡿⣿⡿⣠⣟⣾⡿⣤⡠⠂");
+        System.out.println("⠘⠦⠤⣿⣿⣷⣼⣿⠀⠉⠉⠉⠉⠉⠀⢸⣿⣿⣿⣿⣿⠁⠀⠀");
+        System.out.println("⠀⠀⠀⢸⢻⣿⣿⣿⣶⡀⠾⣦⣷⠔⢧⣾⣿⣿⣿⣿⢸⠀⠀⠀");
+        System.out.println("⠀⠀⢀⣾⠀⠉⣿⣿⣿⣧⣦⣻⣳⣶⣿⣿⣿⣾⣿⡿⢸⠀⠀⠀");
+        System.out.println("⠀⢀⣿⣿⡀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⢸⣧⠀⠀");
+        System.out.println("⠀⢸⣿⣿⣇⠀⠈⠿⢿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠀⠀⣿⣿⡆⠀");
+        System.out.println("⠀⠈⢿⣿⣿⡄⠀⠀⠀⠉⠛⠛⠛⠛⠉⠁⠀⠀⠀⠀⣿⣿⣇⠀");
+        System.out.println("⠀⠀⢸⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⠀");
+        System.out.println("⠀⠀⠀⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⡇⠀");
+        System.out.println("⠀⠀⠀⠘⢿⣿⣿⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⠟⠁⠀");
+        System.out.println("⠀⠀⠀⠀⠀⠙⠿⢿⣿⣿⣶⣄⡀⠀⠀⠀⠀⣰⣿⣿⠋⠀⠀⠀");
+        System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣦⠀⠀⠀⣿⣿⠃⠀⠀⠀⠀");
+        System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣷⣤⣺⣿⡇⠀⠀⠀⠀⠀");
+        System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠿⣿⠿⠋⠀⠀⠀⠀⠀⠀");
+        System.out.println("");        
+        
+
+    }
+    public static void easterEgg2(){
+        System.out.println("⠀⠀⠀⠀⢀⣠⠤⡶⣲⢺⣴⣶⢭⣉⢲⣀⠀⠀⠀⠀⠀⠀⠀⠀");
+        System.out.println("⠀⠀⢀⡾⢵⣶⣿⣿⣿⣾⣷⣳⣿⣷⣵⣈⠷⢤⡀⠀⠀⠀⠀⠀");
+        System.out.println("⠀⠀⠘⢾⣿⡿⠿⠿⠿⠿⠿⠿⢿⡿⣿⣿⣿⣾⣾⣦⠀⠀⠀⠀");
+        System.out.println("⠀⠀⣠⡋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⢿⢿⣧⠀⠀⠀");
+        System.out.println("⠀⣰⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣳⢮⣧⠀⠀");
+        System.out.println("⢠⣧⠇⡠⠄⣤⣤⣄⡀⠀⠀⣀⣤⣄⣤⣀⠀⠀⣿⣿⣿⣯⣇⠀");
+        System.out.println("⠈⣿⠀⢀⣶⣾⣿⣿⠁⠀⢸⣿⣿⣿⣧⣌⣥⠀⠘⣿⣿⣿⣿⠀");
+        System.out.println("⢀⣿⠀⠈⠁⠀⠀⠁⠀⠀⠀⠉⠉⠭⠽⠿⠻⠁⠀⣿⣿⣿⡏⠀");
+        System.out.println("⡏⠆⠀⠀⠀⠀⠀⠀⡀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠟⢋⣿⣆");
+        System.out.println("⡎⠀⠀⢀⡴⠂⠈⠉⠻⠿⠿⠛⣀⢲⣤⣄⣀⠀⠀⠈⠘⣏⢹⡿");
+        System.out.println("⠱⡄⠘⢻⣳⣤⡶⠖⠒⠶⠶⢶⣿⣷⣿⣿⣿⣟⠀⠀⠄⠠⣰⠃");
+        System.out.println("⠀⢹⠀⠀⠀⠈⠓⠒⠒⠒⠒⠒⠛⠁⢨⣼⣿⣿⡀⣼⠖⠛⠁⠀");
+        System.out.println("⠀⠘⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⢁⠀⠀⠀⠀⠀");
+        System.out.println("⠀⠀⢸⠀⠀⠀⢀⣀⣀⣀⣠⣤⣶⣿⣿⣿⡿⣁⡎⢸⠀⠀⠀⠀");
+        System.out.println("⠀⠀⢸⠀⠀⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠸⠀⠀⠀⠀");
+        System.out.println("⠀⠀⢸⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⡇⠀⠀⠀");
+        System.out.println("⠀⢀⣼⠀⠀⠀⠀⠀⠈⢹⣿⣿⣿⡟⣿⣿⣿⣟⡁⠀⢿⣷⡄⠀");
+        System.out.println("⠀⣸⣿⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⣿⣝⣿⣿⡍⠁⠀⢸⣿⣷⠀");
+        System.out.println("⠀⣿⣿⡀⠀⠀⠀⠀⠀⢐⣿⣿⣿⣿⣿⣿⣯⠁⠀⠀⢸⣿⣿⠀");
+        System.out.println("⠀⢿⢿⣿⣄⠀⠀⠀⠀⢼⣿⣿⣿⣿⣿⣿⡯⠀⢠⢒⣿⣿⡏⠀");
+        System.out.println("⠀⠈⢮⡻⣿⣷⣀⠀⢀⢸⣿⣿⣟⣿⣿⠿⠒⣀⣤⣿⣿⠏⠀⠀");
+        System.out.println("⠀⠀⠀⠙⠺⣿⣿⣿⣾⣾⣿⣭⣭⣭⣷⣾⣿⣿⣿⠟⠁⠀⠀⠀");
+        System.out.println("⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠿⠿⠟⠛⠉⠁⠀⠀⠀⠀⠀");
+        System.out.println("");       
+    }
+
+    
  
     
 }
+//https://www.messletters.com/es/text-art/
+
+
+
