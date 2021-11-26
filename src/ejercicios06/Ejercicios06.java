@@ -425,7 +425,6 @@ public class Ejercicios06 {
         return array;
     }
     public static int[][] ordenarIntArray2v2(int[][] array){
-        boolean done = false;
         boolean done1 = false;
         boolean done2 = false;
         int swap;
@@ -645,6 +644,7 @@ public class Ejercicios06 {
 
     }
     public static void easterEgg2(){
+        System.out.println("");
         System.out.println("⠀⠀⠀⠀⢀⣠⠤⡶⣲⢺⣴⣶⢭⣉⢲⣀⠀⠀⠀⠀⠀⠀⠀⠀");
         System.out.println("⠀⠀⢀⡾⢵⣶⣿⣿⣿⣾⣷⣳⣿⣷⣵⣈⠷⢤⡀⠀⠀⠀⠀⠀");
         System.out.println("⠀⠀⠘⢾⣿⡿⠿⠿⠿⠿⠿⠿⢿⡿⣿⣿⣿⣾⣾⣦⠀⠀⠀⠀");
