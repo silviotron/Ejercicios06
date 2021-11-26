@@ -29,6 +29,8 @@ public class Ejercicios06 {
             System.out.println("*  5. Euromillones                               *");
             System.out.println("*  6. Print y ordenar array bidimensional        *");
             System.out.println("*  7. Anagrama bien                              *");
+            System.out.println("*  8. Palindromo bien                            *"); 
+            System.out.println("*  9. Random arry                                *");              
             System.out.println("*  0. Salir                                      *");
             System.out.println("**************************************************");
             entradaUsuario = teclado.nextLine();
@@ -54,6 +56,12 @@ public class Ejercicios06 {
                 case "7":
                     ejercicio07();
                     break; 
+                case "8":
+                    ejercicio08();
+                    break;      
+                case "9":
+                    ejercicio09();
+                    break;                    
                 case "69":
                     easterEgg();
                     break;
@@ -504,6 +512,93 @@ public class Ejercicios06 {
         s = sb.toString();
         return s;
     }
+    
+     public static void ejercicio08(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("introduce algo");
+        String texto = sc.nextLine();
+        if(esPalindromo(texto)){
+            System.out.println("Es palindromo");
+        }else{
+            System.out.println("No es palindromo");            
+        }
+
+    }
+    public static boolean esPalindromo(String texto){
+        texto = soloLetrasNumeros(texto).toLowerCase();
+        String textoReves = "";
+        for(int posicion = texto.length() - 1; posicion >= 0 ; posicion--){
+            textoReves = "" + textoReves + texto.charAt(posicion);
+        }
+        return (texto.equals(textoReves));
+    }
+    public static String soloLetrasNumeros(String s){
+        StringBuilder sb = new StringBuilder(s);
+        for (int i = s.length()-1; i >= 0; i--) {
+            if(!Character.isLetter(s.charAt(i)) && !Character.isDigit(s.charAt(i))){
+                sb.deleteCharAt(i);
+            }
+            
+        }        
+        s = sb.toString();
+        return s;
+    } 
+    
+    public static void ejercicio09(){
+        Scanner sc = new Scanner(System.in);
+        int numElementos = -1;
+        do{
+            System.out.print("Por favor, inserte el numero de elementos que desea crear ");
+            if(sc.hasNextInt()){
+                numElementos = sc.nextInt();                
+            }
+            if(numElementos <= 0){
+                System.out.println("ERROR: Debe insertar un número natural.\n");
+            }
+            sc.nextLine();
+        }
+        while(numElementos <= 0);
+        int[] array = crearIntArray(numElementos, 1, numElementos*2);
+        printIntArray(ordenarIntArray(array));
+        
+        
+        
+        
+    }
+    public static int[] crearIntArray(int tamano, int minimo, int maximo){
+        Random random = new Random();
+        int numRandom;
+        boolean existe;
+        int[] array = new int[tamano];
+        for (int i = 0; i < array.length; i++) {
+            do{
+                numRandom = random.nextInt(maximo + 1 - minimo) + minimo;
+                existe = existeEnArray(numRandom, array);               
+            }
+            while(existe);
+            array[i] = numRandom;
+            
+        }
+        
+        return array;
+    }
+    public static int[] ordenarIntArray(int[] array){
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if(array[i] < array[j]){
+                    int swap = array[i];
+                    array[i] = array[j];
+                    array[j] = swap;
+                    
+                }
+                
+            }
+            
+        }
+        
+        return array;
+    }
+   
     
     public static void easterEgg(){
         System.out.println("");
