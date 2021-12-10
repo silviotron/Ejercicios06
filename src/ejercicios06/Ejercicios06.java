@@ -61,6 +61,8 @@ public class Ejercicios06 {
                     break;      
                 case "9":
                     ejercicio09();
+                case "11":
+                    ejercicio11();                    
                     break;                    
                 case "69":
                     easterEgg();
@@ -317,7 +319,7 @@ public class Ejercicios06 {
     System.out.println("PARTE 1:\n");
     printIntArray2v4(matriz);
     System.out.println("PARTE 2:\n");
-    printIntArray2v4(ordenarIntArray2(matriz));    
+    printIntArray2v4(ordenarIntArray2v3(matriz));    
         
     }
     
@@ -460,7 +462,25 @@ public class Ejercicios06 {
         }
         
         return array;
-    }   
+    }
+    public static int[][] ordenarIntArray2v3(int[][] array){
+        for(int i = 0; i < array.length; i++){
+            for(int j = 0; j < array[i].length; j++){
+                int valorK = j == (array[i].length - 1) ? i + 1 : i;
+                for(int k = valorK; k < array.length; k++){
+                    int valorL = (k == i) ? j + 1 : 0;
+                    for(int l = valorL; l < array[k].length; l++){
+                        if(array[i][j] > array[k][l]){
+                            int auxiliar = array[i][j];
+                            array[i][j] = array[k][l];
+                            array[k][l] = auxiliar;
+                        }
+                    }                    
+                }
+            }
+        }
+        return array;
+    }    
     
     public static void ejercicio07(){
         Scanner sc = new Scanner(System.in);
@@ -669,6 +689,21 @@ public class Ejercicios06 {
         System.out.println("⠀⠀⠀⠙⠺⣿⣿⣿⣾⣾⣿⣭⣭⣭⣷⣾⣿⣿⣿⠟⠁⠀⠀⠀");
         System.out.println("⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠿⠿⠟⠛⠉⠁⠀⠀⠀⠀⠀");
         System.out.println("");       
+    }
+    
+    public static void ejercicio11(){
+        Random random = new Random();
+        int[] array = new int[10];
+        for ( int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(200);
+        }
+        for (int valor : array) {
+            System.out.printf("%4s\n", valor);
+        }
+        System.out.println("");
+        
+        
+        
     }
 
     
